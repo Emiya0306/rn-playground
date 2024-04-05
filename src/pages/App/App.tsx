@@ -10,7 +10,7 @@ import {
   TitleComponent,
   TooltipComponent,
 } from 'echarts/components';
-import {SVGRenderer, SkiaChart} from '@wuba/react-native-echarts';
+import {SVGRenderer, SvgChart} from '@wuba/react-native-echarts';
 
 echarts.use([
   TitleComponent,
@@ -37,7 +37,7 @@ const option = {
 };
 
 function App(): React.JSX.Element {
-  const skiaRef = useRef<typeof SkiaChart>(null);
+  const skiaRef = useRef<typeof SvgChart>(null);
 
   useEffect(() => {
     let chart = echarts.init(skiaRef.current, 'light', {
@@ -52,7 +52,7 @@ function App(): React.JSX.Element {
   return (
     <View style={style.app}>
       <Text>App</Text>
-      <SkiaChart ref={skiaRef} />
+      <SvgChart ref={skiaRef} />
     </View>
   );
 }
